@@ -1,5 +1,5 @@
 # SFDC-Work
-Salesforce ADMIN, APP & DEV Training/Work in Force.com Platform, AppExchange, SFDC Security Model, Service Cloud, Sales Cloud, Lightning App Builder, Salesforce Reports & Dashboard and Apex & Visualforce.
+Salesforce ADMIN, APP & DEV Work in Force.com Platform, AppExchange, SFDC Security Model, Service Cloud, Sales Cloud, Lightning App Builder, Salesforce Reports & Dashboard and Apex & Visualforce.
 
 *Introduction to Cloud Computing and SFDC
 *Building blocks of Force.com Platform and Introduction to the Student Master App
