@@ -1,0 +1,229 @@
+=========================================================================
+				18/08/2018
+A very warm welcome to you all.. Hope you can hear me and see my screen
+=========================================================================
+Cloud Computing
+SAAS,PAAS,IAAS-PIZZA AS A SERVICE
+Gmail apps Drive,mail,hangouts
+twitter,facebook,linkedin
+C-Coexist/multitenant
+L-Location independent
+O-Ondemand
+U-Usage based/pay per use
+D-Dynamic scalable
+CAAS-CAR AS A SERVICE-UBER,OLA
+
+HW--SERVERS,NW,STORAGE ETC..
+DATA CENTRE-COOLING,POWER,REAL-ESTATE SPACE...
+PLATFORM READY-os,db,app server etc etc.
+INSTALL SW-banking sw,point of sale,insurance...
+
+PUBLIC TRANSPORT-ROADS,RAIL SERVICES OR AIRLINES---CHARTERED FLIGHTS..
+NOT JUST ABOUT COST AFFORDABILITY...
+WHY SPEND ALL YOUR TIME & ENRGY ON ALL BASIC STUFF RATHER FOCUSSING ON MY CORE BUSINESS???
+SMAC-Social,Mobile,Analytics & Cloud
+
+Free developer environment
+You will be asked to set a pwd.
+& some secret question-place of birth,favorite ,petname
+1.signup for a free developer environment
+2.set up pwd & security question.
+3.login
+
+Understand the building blocks of the SFDC developer environment
+1.APP-COOLECTION OF TABS
+2.TABS-SHOWS A LIST OF AC,CONTACTS,CASES,ORDERS ETC ETC
+3.OBJECT-TABLE-EXCEL SHEET-THIS IS A STORAGE SPACE OR A CONTAINER FOR RECORDS
+4.RECORDS-SET OF FIELDS
+
+WHAT ARE THE 4 THINGS YOU CAN DO IN A SYSTEM,APP,SW,DB
+IRRESPECTIVE OF TECHNOLOGY..IT COULD BE MAINFRAME,JAVA,.NET,SFDC,SIEBEL,PEOPLESOFT,ORACLE,SYBASE,DB2
+--CRUD-CREATE NEW,READ EXISTING RECORDS,UPDATE,DELETE
+
+--DATA IS STORED IN THE DB..OR IN MY HDD OR ON THE SERVER HDD...
+--IT IS DISPLAYED ON MY UI WHEN I CLICK SOMETHING AFTER I LOGIN WITH MY USERID/PWD
+-CONTROLLER
+MVC-UI,DB,BIZ LOGIC
+MODEL-DATA MODEL,DB
+VIEW-UI
+CONTROLLER-BIZ LOGIC
+-------------------------------------------------------------
+SFDC-ENVIRONMENT-ORG-DEVELOPER ORG-INSTANCE--DB
+IS A COMBINATION OF UI,DB & OF COURSE CONTROLLING LAYER--INTEGRATED UI SHOWING ALL THE LAYERS LIKE DB,CONTROLLER,USERS,UI,SETTINGS..
+
+SOQL-SQL--STRUCTURED QUERY LANGUAGE
+SELECT NAME FROM TABLE_STUDENT;
+SOQL-SALESFORCE OBBJECT QUERY LANGUAGE
+SOSL-SALESFORCE OBJECT SEARCH LANGUAGE
+
+----METADATA
+MULTI-TENANT-APTTS...GATED COMMUNITY
+LIFTS,ESCALATORS,WATER TANK,SUMP,CORRIDOR,WATER UNIT PURIFIER
+FLAT-YOU HAVE EXCLUSIVE ACCESS..SECURITY,PRIVACY..
+THERE IS A DEFINED LAYOUT FOR THE FLAT..ALL KITCHENS WILL BE IN 1 CORNER...1 SIDE
+25 FLOORS..& 1 FLAT HAS KITCHEN IN THE FRONT,ANOTHER KITCHEN IN MIDDLE,ANOTHER KITCHEN IN THE CORNER...
+KITCHEN
+WASH
+HALL
+LIVING ROOM
+--data,metadata---
+data-records,fields..business data...list of ac,contacts etc
+metadata---2BHK,3BHK...layout..template..
+=========================================================================
+				19/08/2018
+A very warm welcome to you all.. Hope you can hear me and see my screen
+=========================================================================
+---DATA CENTRES OF A LARGE CUSTMER--
+THERE WILL BE 1000 APPS RUNNING IN 1 DC--EXCLUSIVE TO THAT CUSTOMER,HIS OWN PROPERTY & HIS OWN INFRA...
+500 CUSTOMERS...500-1000 APPS IN 1 DC--it is owned & managed by a service provider
+APPSERVERS RUN IN A SHARED PLACE..BUT MY DB SHD BE INSIDE PREMISES..
+PUBLIC CLOUD,PRIVATE,HYBRID
+SFDC IS 100% PUBLIC CLOUD...
+-----------------------------------------
+STD OBJECT-AC,CONTACT,LEADS,ORDERS ETC.
+CUSTOM OBJECT...
+STD FIELDS-NAME,CREATED BY,OWNER,MODIFIED BY
+CUSTOM FIELDS-EMAIL ID,PHONE..
+CAN A STD OBJECT HV A CUSTOM FIELDS?Y
+CAN A CUSTOM OBJECT HV STD FIELDS?Y
+-----------------------------------------
+1.CREATE A NEW APP.
+2.CREATE 2-3 NEW CUSTOM OBJECTS FOR THE STUDENT APP.
+3.UNDERSTAND THE RELATIONSHIP BETWN. THE OBJECTS-MASTERDETAIL OR OTHER TYPES
+4.CREATE SOME FIELDS IN EACH OF THESE OBJECTS
+5.CREATE SOME SAMPLE RECORDS FOR STUDENTMASTER & MARKS & ACTIVITIES
+6.UNDERSTAND FIELD TYPES.
+7.REARRANGE FIELDS ON THE PAGE LAYOUT.
+
+HOW TO DISPLAY AN OBJECT ON THE UI--tab
+1 OBJECT 1 TAB...
+U CAN HV AN OBJECT W/O A TAB...
+
+HOW TO DIPLAY A FIELD ON THE UI??
+WHICH ELEMENT OR BUILDING BLOCK OF SFDC HELPS U TO DISPLAY FIELDS ON THE SCREEN OR UI??PAGELAYOUT
+
+STD DATA TYPES-TEXT,EMAIL,DATE,DATE/TIME,URL,PHONE,NO.,DECIMAL...
+
+If the mark is>=40-QUALIFIED...<40--FAIL
+>100 OR  <0-INVALID DATA
+VALIDATION RULE & FORMULA FIELD
+LIST OF DEPTT.-DROPDOWN & LET THE USER SELECT IT
+FREE TEXT-YOU WILL START CREATING DATA ISSUES..
+MECH.,MEC,MECHANICAL
+
+IF U MARK A FIELD AS UNIQUE AN INDEX IS CREATED AUTO ON THAT FIELD...
+ORACLE,SQL...INDEX CREATION & MAINTENANCE IS MANUALLY BY THE ADMIN
+IN SFDC-INDEX CREATION & MAINTENANCE IS AUTO.
+Global search--not all fields are searchable..try to understand fields that can be searched..
+=========================================================================
+				25/08/2018
+A very warm welcome to you all.. Hope you can hear me and see my screen
+=========================================================================
+--Try creating a picklist dependency betwn. COUNTRY-STATE-CITY
+Dependent Picklists--Field Dependencies
+Country & City
+Std. Picklists
+custom picklists--you shd be know which can be controlling & which can be dependent..
+SEARCH LAYOUT,PAGE LAYOUT & RELATED LISTS...
+ABILITY TO CREATE CHILD RECORDS FROM THE PARENT...-CREATE MARKS OR ACTIVITY FROM STUDENT MASTER..
+FROM ACTIVITY MASTER--ADD NEW STUDENTS TO THE ACTIVITY..
+-------------------------------------------------
+one student can write many exams..& have one or more marks against each subject.
+activities..tennis,baseball,cricket,chess,dance,arts,badminton..
+one student ...can participate in >one activity
+each activity--tennis-you can hv >one student can take part in tennis-4,baseball-22..
+many to many relationship
+one student to many marks
+cardinality-data modeling
+student mark had 1 relationship field pointing/linking to student master
+junction object-shd hv 2 relationship fields
+one relationship is towards the student master
+second relationship is towards the activity master
+look & feel & security...will be inherited from the 1st master-detail relationship
+Junction Object--MTM
+1.the need for a junction object--use case/scenarios
+2.how you create it-its just another custom object & it has 2 relationship fields,both master-detail relationships to 2 different master objects.
+=========================================================================
+				26/08/2018
+A very warm welcome to you all.. Hope you can hear me and see my screen
+=========================================================================
+Limits-Design/Development limits
+How many fields can u hv in a std/custom object???--500
+How many relationship fields can u hv???--40
+How many master-detail fields???--02
+How many lookups???--38
+1-MD,39-LOOKUP
+2-MD,38-LOOKUP
+0-MD,40-LOOKUP
+--------------------SECURITY-----SFDC--------------------------
+1.Org level security
+a.user login
+b.IP restrictions & login hrs.
+2.Object level security
+Profile based
+3.Field level security
+Profile based
+4.Record level security
+a.Org Wide Default(OWD)
+b.Role-hierarchy
+c.sharing rules
+d.manual sharing
+SALESFORCE ORG(INSTANCE/ORG/DB)--USERNAME & PWD,VERIFICATION CODE---2FA AUTHENTICATION..
+YOU SEE DIFFERENT APPS,TABS,OBJECTS,RECORDS ARE INSIDE THE OBJECTS
+
+WHO ARE THE KEY USERS...
+WHAT PRIVILEGES SHD THEY HV?
+WHO CAN SEE WHAT???
+
+STUDENTS
+PROFESSORS(LECTURERS)
+HOD
+PRINCIPAL/DEAN/SR. MGMT.
+
+Profile???contains user permissions & access settings that control what users can do within their org.
+Std Profiles
+sys admin
+std. platform user
+std user
+soln manager
+mktg manager
+contract manager
+read only etc.
+Points to remember
+1.every user MUST be assigned to a profile.
+2.access permissions to objects(& fields) of std profiles cannot be edited.
+3.std profiles hv access to all std objects
+4.access to tabs & apps can be configured for std profiles
+5.access permissions of custom profiles can be edited.
+custom profiles are just a clone of std profiles with some customized settings & permissions.
+---License types----
+salesforce---SAAS--sales cloud,service cloud etc. modules & underlying std objects like ac,contacts,oppty,cases etc..,u can also see the custom objects..
+salesforce platform--PAAS--you can see some of the std objects like ac,contacts,cases,u can also see the custom objects...
+chatter free-5000
+every user who has to login to SFDC,needs a license..per user based..
+500
+login.salesforce.com---username is linked to 1 org id...email id can be linked to multiple orgs..
+user license-this is every user shd hv it-compulsory
+feature license-optional
+CU-only needs platform licenses..500-1000 students+prof.. etc
+10-salesforce--admin & sr mgmt...
+salesforce content & knowledge--u can use this to share docs,assignments...or hv a repository
+-----
+OWD defines the basic/min. access level for eacj object irrespective of the profile
+Private
+Public Read only
+Public Read/Write
+custom objects OWD provides 'Grant Access Using Hierarchies' option.
+
+
+
+
+
+
+
+
+
+
+
+
+
