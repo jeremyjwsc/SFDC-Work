@@ -1,5 +1,5 @@
 # SFDC-Work
-SDCD ADMIN, APP & DEV Work in Force.com Platform, AppExchange, SFDC Security Model, Service Cloud, Sales Cloud, Lightning App Builder, SFDC Reports & Dashboard and Apex & Visualforce.
+SFDC Admin, App & Developer Work in Force.com Platform, AppExchange, SFDC Security Model, Service Cloud, Sales Cloud, Lightning App Builder, SFDC Reports & Dashboard and Apex & Visualforce.
 
 * Introduction to Cloud Computing and SFDC
 * Building blocks of Force.com Platform and Introduction to the Student Master App
@@ -18,9 +18,10 @@ SDCD ADMIN, APP & DEV Work in Force.com Platform, AppExchange, SFDC Security Mod
 * SF Mobile
 * Deployment 
 * Application Cycle
-* Lightning in Salesforce
+* Lightning in SF
 * Buttons and Link management
 * AppExchange
 * Introduction to Apex Programming
 * Introduction to VisualForce
-* SFDC Exception Handling, Testing, Debugging, Triggers, Governor Limits and DMLs  
+* Developer Console, Execute SOQL and SOSL Queries using the Query Editor or in Apex Programming
+* SF Developer Exception Handling, Testing, Debugging, Triggers, Governor Limits and DMLs
