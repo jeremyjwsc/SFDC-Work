@@ -1,0 +1,15 @@
+#Mapping values
+#Sat Sep 08 22:04:18 CEST 2018
+PREFERENCES__C=Preferences__c
+OTHER_CITY__C=Other_City__c
+STUDENTEMAILID__C=StudentEmailid__c
+DOJ__C=DOJ__c
+JAVA__C=Java__c
+DOB__C=DOB__c
+STATUS__C=Status__c
+STUDENTNAME__C=StudentName__c
+CSHARP__C=csharp__c
+COUNTRY__C=Country__c
+CITY__C=City__c
+DEPT__C=Dept__c
+ENG_DRAWING__C=Eng_Drawing__c
