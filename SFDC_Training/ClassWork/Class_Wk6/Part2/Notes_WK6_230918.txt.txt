@@ -1,0 +1,899 @@
+=========================================================================
+				18/08/2018
+A very warm welcome to you all.. Hope you can hear me and see my screen
+=========================================================================
+Cloud Computing
+SAAS,PAAS,IAAS-PIZZA AS A SERVICE
+Gmail apps Drive,mail,hangouts
+twitter,facebook,linkedin
+C-Coexist/multitenant
+L-Location independent
+O-Ondemand
+U-Usage based/pay per use
+D-Dynamic scalable
+CAAS-CAR AS A SERVICE-UBER,OLA
+
+HW--SERVERS,NW,STORAGE ETC..
+DATA CENTRE-COOLING,POWER,REAL-ESTATE SPACE...
+PLATFORM READY-os,db,app server etc etc.
+INSTALL SW-banking sw,point of sale,insurance...
+
+PUBLIC TRANSPORT-ROADS,RAIL SERVICES OR AIRLINES---CHARTERED FLIGHTS..
+NOT JUST ABOUT COST AFFORDABILITY...
+WHY SPEND ALL YOUR TIME & ENRGY ON ALL BASIC STUFF RATHER FOCUSSING ON MY CORE BUSINESS???
+SMAC-Social,Mobile,Analytics & Cloud
+
+Free developer environment
+You will be asked to set a pwd.
+& some secret question-place of birth,favorite ,petname
+1.signup for a free developer environment
+2.set up pwd & security question.
+3.login
+
+Understand the building blocks of the SFDC developer environment
+1.APP-COOLECTION OF TABS
+2.TABS-SHOWS A LIST OF AC,CONTACTS,CASES,ORDERS ETC ETC
+3.OBJECT-TABLE-EXCEL SHEET-THIS IS A STORAGE SPACE OR A CONTAINER FOR RECORDS
+4.RECORDS-SET OF FIELDS
+
+WHAT ARE THE 4 THINGS YOU CAN DO IN A SYSTEM,APP,SW,DB
+IRRESPECTIVE OF TECHNOLOGY..IT COULD BE MAINFRAME,JAVA,.NET,SFDC,SIEBEL,PEOPLESOFT,ORACLE,SYBASE,DB2
+--CRUD-CREATE NEW,READ EXISTING RECORDS,UPDATE,DELETE
+
+--DATA IS STORED IN THE DB..OR IN MY HDD OR ON THE SERVER HDD...
+--IT IS DISPLAYED ON MY UI WHEN I CLICK SOMETHING AFTER I LOGIN WITH MY USERID/PWD
+-CONTROLLER
+MVC-UI,DB,BIZ LOGIC
+MODEL-DATA MODEL,DB
+VIEW-UI
+CONTROLLER-BIZ LOGIC
+-------------------------------------------------------------
+SFDC-ENVIRONMENT-ORG-DEVELOPER ORG-INSTANCE--DB
+IS A COMBINATION OF UI,DB & OF COURSE CONTROLLING LAYER--INTEGRATED UI SHOWING ALL THE LAYERS LIKE DB,CONTROLLER,USERS,UI,SETTINGS..
+
+SOQL-SQL--STRUCTURED QUERY LANGUAGE
+SELECT NAME FROM TABLE_STUDENT;
+SOQL-SALESFORCE OBBJECT QUERY LANGUAGE
+SOSL-SALESFORCE OBJECT SEARCH LANGUAGE
+
+----METADATA
+MULTI-TENANT-APTTS...GATED COMMUNITY
+LIFTS,ESCALATORS,WATER TANK,SUMP,CORRIDOR,WATER UNIT PURIFIER
+FLAT-YOU HAVE EXCLUSIVE ACCESS..SECURITY,PRIVACY..
+THERE IS A DEFINED LAYOUT FOR THE FLAT..ALL KITCHENS WILL BE IN 1 CORNER...1 SIDE
+25 FLOORS..& 1 FLAT HAS KITCHEN IN THE FRONT,ANOTHER KITCHEN IN MIDDLE,ANOTHER KITCHEN IN THE CORNER...
+KITCHEN
+WASH
+HALL
+LIVING ROOM
+--data,metadata---
+data-records,fields..business data...list of ac,contacts etc
+metadata---2BHK,3BHK...layout..template..
+=========================================================================
+				19/08/2018
+A very warm welcome to you all.. Hope you can hear me and see my screen
+=========================================================================
+---DATA CENTRES OF A LARGE CUSTMER--
+THERE WILL BE 1000 APPS RUNNING IN 1 DC--EXCLUSIVE TO THAT CUSTOMER,HIS OWN PROPERTY & HIS OWN INFRA...
+500 CUSTOMERS...500-1000 APPS IN 1 DC--it is owned & managed by a service provider
+APPSERVERS RUN IN A SHARED PLACE..BUT MY DB SHD BE INSIDE PREMISES..
+PUBLIC CLOUD,PRIVATE,HYBRID
+SFDC IS 100% PUBLIC CLOUD...
+-----------------------------------------
+STD OBJECT-AC,CONTACT,LEADS,ORDERS ETC.
+CUSTOM OBJECT...
+STD FIELDS-NAME,CREATED BY,OWNER,MODIFIED BY
+CUSTOM FIELDS-EMAIL ID,PHONE..
+CAN A STD OBJECT HV A CUSTOM FIELDS?Y
+CAN A CUSTOM OBJECT HV STD FIELDS?Y
+-----------------------------------------
+1.CREATE A NEW APP.
+2.CREATE 2-3 NEW CUSTOM OBJECTS FOR THE STUDENT APP.
+3.UNDERSTAND THE RELATIONSHIP BETWN. THE OBJECTS-MASTERDETAIL OR OTHER TYPES
+4.CREATE SOME FIELDS IN EACH OF THESE OBJECTS
+5.CREATE SOME SAMPLE RECORDS FOR STUDENTMASTER & MARKS & ACTIVITIES
+6.UNDERSTAND FIELD TYPES.
+7.REARRANGE FIELDS ON THE PAGE LAYOUT.
+
+HOW TO DISPLAY AN OBJECT ON THE UI--tab
+1 OBJECT 1 TAB...
+U CAN HV AN OBJECT W/O A TAB...
+
+HOW TO DIPLAY A FIELD ON THE UI??
+WHICH ELEMENT OR BUILDING BLOCK OF SFDC HELPS U TO DISPLAY FIELDS ON THE SCREEN OR UI??PAGELAYOUT
+
+STD DATA TYPES-TEXT,EMAIL,DATE,DATE/TIME,URL,PHONE,NO.,DECIMAL...
+
+If the mark is>=40-QUALIFIED...<40--FAIL
+>100 OR  <0-INVALID DATA
+VALIDATION RULE & FORMULA FIELD
+LIST OF DEPTT.-DROPDOWN & LET THE USER SELECT IT
+FREE TEXT-YOU WILL START CREATING DATA ISSUES..
+MECH.,MEC,MECHANICAL
+
+IF U MARK A FIELD AS UNIQUE AN INDEX IS CREATED AUTO ON THAT FIELD...
+ORACLE,SQL...INDEX CREATION & MAINTENANCE IS MANUALLY BY THE ADMIN
+IN SFDC-INDEX CREATION & MAINTENANCE IS AUTO.
+Global search--not all fields are searchable..try to understand fields that can be searched..
+=========================================================================
+				25/08/2018
+A very warm welcome to you all.. Hope you can hear me and see my screen
+=========================================================================
+--Try creating a picklist dependency betwn. COUNTRY-STATE-CITY
+Dependent Picklists--Field Dependencies
+Country & City
+Std. Picklists
+custom picklists--you shd be know which can be controlling & which can be dependent..
+SEARCH LAYOUT,PAGE LAYOUT & RELATED LISTS...
+ABILITY TO CREATE CHILD RECORDS FROM THE PARENT...-CREATE MARKS OR ACTIVITY FROM STUDENT MASTER..
+FROM ACTIVITY MASTER--ADD NEW STUDENTS TO THE ACTIVITY..
+-------------------------------------------------
+one student can write many exams..& have one or more marks against each subject.
+activities..tennis,baseball,cricket,chess,dance,arts,badminton..
+one student ...can participate in >one activity
+each activity--tennis-you can hv >one student can take part in tennis-4,baseball-22..
+many to many relationship
+one student to many marks
+cardinality-data modeling
+student mark had 1 relationship field pointing/linking to student master
+junction object-shd hv 2 relationship fields
+one relationship is towards the student master
+second relationship is towards the activity master
+look & feel & security...will be inherited from the 1st master-detail relationship
+Junction Object--MTM
+1.the need for a junction object--use case/scenarios
+2.how you create it-its just another custom object & it has 2 relationship fields,both master-detail relationships to 2 different master objects.
+=========================================================================
+				26/08/2018
+A very warm welcome to you all.. Hope you can hear me and see my screen
+=========================================================================
+Limits-Design/Development limits
+How many fields can u hv in a std/custom object???--500
+How many relationship fields can u hv???--40
+How many master-detail fields???--02
+How many lookups???--38
+1-MD,39-LOOKUP
+2-MD,38-LOOKUP
+0-MD,40-LOOKUP
+--------------------SECURITY-----SFDC--------------------------
+1.Org level security
+a.user login
+b.IP restrictions & login hrs.
+2.Object level security
+Profile based
+3.Field level security
+Profile based
+4.Record level security
+a.Org Wide Default(OWD)
+b.Role-hierarchy
+c.sharing rules
+d.manual sharing
+SALESFORCE ORG(INSTANCE/ORG/DB)--USERNAME & PWD,VERIFICATION CODE---2FA AUTHENTICATION..
+YOU SEE DIFFERENT APPS,TABS,OBJECTS,RECORDS ARE INSIDE THE OBJECTS
+
+WHO ARE THE KEY USERS...
+WHAT PRIVILEGES SHD THEY HV?
+WHO CAN SEE WHAT???
+
+STUDENTS
+PROFESSORS(LECTURERS)
+HOD
+PRINCIPAL/DEAN/SR. MGMT.
+
+Profile???contains user permissions & access settings that control what users can do within their org.
+Std Profiles
+sys admin
+std. platform user
+std user
+soln manager
+mktg manager
+contract manager
+read only etc.
+Points to remember
+1.every user MUST be assigned to a profile.
+2.access permissions to objects(& fields) of std profiles cannot be edited.
+3.std profiles hv access to all std objects
+4.access to tabs & apps can be configured for std profiles
+5.access permissions of custom profiles can be edited.
+custom profiles are just a clone of std profiles with some customized settings & permissions.
+---License types----
+salesforce---SAAS--sales cloud,service cloud etc. modules & underlying std objects like ac,contacts,oppty,cases etc..,u can also see the custom objects..
+salesforce platform--PAAS--you can see some of the std objects like ac,contacts,cases,u can also see the custom objects...
+chatter free-5000
+every user who has to login to SFDC,needs a license..per user based..
+500
+login.salesforce.com---username is linked to 1 org id...email id can be linked to multiple orgs..
+user license-this is every user shd hv it-compulsory
+feature license-optional
+CU-only needs platform licenses..500-1000 students+prof.. etc
+10-salesforce--admin & sr mgmt...
+salesforce content & knowledge--u can use this to share docs,assignments...or hv a repository
+-----
+OWD defines the basic/min. access level for eacj object irrespective of the profile
+Private
+Public Read only
+Public Read/Write
+custom objects OWD provides 'Grant Access Using Hierarchies' option.
+=========================================================================
+				01/09/2018
+A very warm welcome to you all.. Hope you can hear me and see my screen..
+=========================================================================
+--------------------Sales org.-------------------------
+Global sales org..hp,intel,MS
+CEO
+DIRECTOR/EVP-SALES-NA,SA,MEA,APAC,UK,NEUROPE,WEUROPE...
+REGIONAL HEAD RH1-EAST,WEST,CENTRAL & CANADA
+RH2-UK
+RH3-APAC
+COUNTRY HEADS-STATE LEVEL HEADS..REPORT INTO COUNTRY
+STATE LEVEL HEAD--10SM REPORTING INTO HIM
+CITY--SALES MGR..1 SM
+SALES EXEC..10SE
+PRODUCT--LAPTOPS,SMARTPH,PRINTERS,DESKTOPS,SERVERS ETC..
+SALES TARGET-FORECASTS MONTHLY,QUARTERLY..ANNUAL ETC...
+TRACK OPPTY..-PROPOSALS..GENERATE LEADS,CAMPAIGNS
+
+SECURITY--CITY SALES MGR.--NY,LA,MUMBAI,HYD,DELHI.....HE CAN SEE RECORDS/SALES DATA OF HIS OWN/TEAM MEMBERS
+THE STATE LEVEL CAN SEE ALL DETAILS OF CITY & BELOW
+COUNTRY
+REGIONAL
+GLOBAL-NA,SA,APAC.
+CEO--
+ROLE CHANGE,RELOCATION,PROMOTIONS,SHORT TERM LEAVE...,RESIGN...
+---ROLE HIERARCHY
+A USER MAY OR MAY NOT BE ASSIGNED TO A ROLE .
+ROLE ARE USED TO CONTROL RECORD ACCESS,WHEREAS PROFILES ARE USED TO SPECIFY ACCESS AT OBJECT & FIELD LEVEL.
+---PUBLIC GROUP IS A GROUPING OF
+USERS
+PUBLIC GROUPS(NESTING)
+ROLES
+ROLES & SUBORDINATES
+PUBLIC GROUPS ARE USED EXTENSIVELY FOR SHARING RULES
+OWD>>>profiles & record ownership>>>role hierarchy>>sharing rule/manual sharing>>visibility inc.
+----------------------------------------
+CMU
+Anyone who has to login to SU app shd hv a valid salesforce user id.
+when u create a new user id--it has to be attached to a profile---mandatory
+profile is always linked to a salesforce license...different license types
+5000 students--5000 user licenses--salesforce platform is enough
+100 professors-salesforce platform is enough
+10 HODs-salesforce platform is enough
+1-Dean/Principal-salesforce platform is enough
+salesforce licenses is not required coz we are notusing sales cloud,service cloud etc-admin can hv...
+How do i decide or restrict or implement the security requirements in the system...
+Principal/Dean--can see all student records,make changes,all marks...
+Prof---Deptt.-he shd see all student records in his deptt..may be u want to restrict him from seeing other deptt. student records
+HOD-can see all student records--have privileges of Prof+few additional stuff
+Student-he can see only his record...& his own marks & his own activity & request details...
+How to control access to records that people do not own???
+what shd be the security setting of the student master & mark records???
+sharing settings--OWD--
+================================================================================
+If you hv a master-detail relationship betwn. 2 objects,say student master & marks..
+You hv to set the Object level,Field level,Tab level settings in the Profile for master & marks separately
+But OWD--security settings--record security inherits the settings from the master/parent object
+================================================================================
+org structure..hierarchy..reporting structure..in your org..
+by virtue of your position in the org. u can see records owned by ur subordinates
+Prof1 is on vacation/holidays..Prof1 user will be on Freeze
+Prof1 is leaving..he has to h/o all records he owns to Prof2
+Prof2 has to takeup all the ownership
+---Mass Transfer
+is done by sys admin instead of manual sharing by the record owner..
+mass transfer can only be done for 
+leads
+ac
+contracts
+& custom objects
+--open up access vertically to people above
+open up access horizontally/laterally to your peers..
+===================================================================================
+VIEW ALL & MODIFY ALL --PERMISSIONS AT THE OBJECT & PROFILE LEVEL OVERRIDES ALL RECORD SHARING SETTINGS--EVEN IF OWD IS PVT.,USER BELONGS TO THIS PROFILE CAN SEE ALL RECORDS IN THE OBJECT
+===================================================================================
+=========================================================================
+				02/09/2018
+A very warm welcome to you all.. Hope you can hear me and see my screen..
+=========================================================================
+Permission Set...why do we need it..
+Professor-1000-Profile 1
+HOD-50--Profile 2
+Principal-1--Profile 3
+
+Security requirements of HOD=Professor+Delete permission
+HOD=Profile 1+Permission Set 1
+-----Lets say the Principal is on leave for 6 months
+For 6 months you can assign the Principal permision set to 1 of the HODs or Prof. who is going to act as a Principal...
+Total security settings for a user==Profile+PSET1+PSET2+PSET3+PSET4
+Total security settings for a user==Profile+PSET1-PSET2-PSET3-PSET4---NOT POSSIBLE-ONLY ADDITION IS POSSIBLE
+Can we use permission set to reduce some privileges associated with a profile & assign to a person??NO
+----------------------BUSINESS LOGIC-----------------------------
+We calculated age based on DOB & current date
+age cannot be less than 17 yrs.
+DOJ cannot be less than 01.01.2018
+Address & zipcode-zipcode shd be in the format US-12345,India-123456
+SSN/AADHAR-FORMAT
+CREDIT CARD/DEBIT CARD-FORMAT
+Based on the marks entered you can verify if a student has PASS/FAIL
+qualified/not qualified...-create a formula field
+Marks shd not be -ve..or greated than 100--0 to 100,-1 or 101 not allowed--validation
+FORMULA FIELD VALUES ARE CALCULATED EVEN FOR EXISTING RECORDS...IF THE FORMULA IS CREATED AFTER FEW RECORDS HV BEEN CREATED
+VALIDATION RULES WILL BE TRIGGERED WHEN A RECORD IS SAVED..IF THERE ARE EXISTING RECORDS & U OPEN THE RECORD ,VALIDATION RULE WILL NOT CHECK THE RECORD,BUT WHEN YOU EDIT & SAVE THE RECORD THE 
+VALIDATION RULE WILL CATCH THE ERROR...
+VALIDATION RULES ARE DEFINED AT THE FIELD/OBJECT LEVEL...& EXECUTES WHENEVER A NEW RECORD IS CREATED OR EXISTING RECORD IS EDITED...
+---mvc---
+---CRUD---
+---MULTI-USER & SECURITY---
+---MULTI-USERS & SCALABILITY-
+I would like to see a summary of all subjects the student has passed--no. of subjects passed,no. of subjects failed...,total marks,avg.(only for subjects passed)--STUDENT MASTER OR MARKS???
+IT SHD BE ON THE STUDENT MASTER
+----------------------------------------
+STUDENT MASTER--BASED ON THE DEPTT.,WE WOULD LIKE TO CAPTURE SOME ADDITIONAL INFORMATION
+FOR EG.,IF STUDENT IS FROM CSE,ECE--WE WILL CHECK & CAPTURE IF THE STUDENT KNOWS JAVA OR CSHARP..--2 FIELDS
+OTHER DEPTT.S-CHECK & CAPTURE SOME OTHER DETAILS...--1 0R 2 FIELDS
+HOW TO CONTROL DISPLAY OF FIELDS ON THE PAGE LAYOUT DEPENDING ON THE DEPTT.
+2+1 FIELDS ARE PRESENT IN THE OBJECT DEFINITION..BUT WE WANT TO SELECTIVELY POPULATE THEM..
+1.Fields hv to be created in the object 1st irrespective of whether u r going to populate them...or not
+2.How to control fields displayed-RECORD TYPE & PAGELAYOUT
+3.Create new record type--CSE,IT,link it to Profiles that shd see this RTYPE..link it to PAGELAYOUT associated with this RTYPE as well.
+4.we have 2 new page layouts..2 new record types..now the next step is to map them..
+5.associate the RTYPE & PAGELAYOUTS...
+---->In our eg.,we hv mapped same page layout & record type to all profiles
+it is also possible to map different record type & pagelayouts to different profiles...
+we will be reusing this concept heavily in sales cloud & service cloud modules
+-------------------------WORKFLOWS & APPROVALS-------------------
+Mobile bill due on 31st..u will get an alerts on 25th,...26th,27th..
+Credit card...
+You create a case--you hv a problem with ur laptop/smartph...---SLAs
+after 4 hrs. no one has replied or responded--you can send a reminder..or escalate to the next level...
+signup for a new ac...--welcome mail...
+updatesome other fields on the same record--set the status or something
+Approvals-short term leave,long term leave(2 level approvers)
+loan-mortgage..separation...final day clearance..
+parallel approval-all deptt.s hv to approve...
+you giving an additional discount--20%--u need 1 more level approval...
+--------------------------------------
+welcome email to the student's email id or parent email id..
+assign a task to the student to complete joining formalities..
+reminder to pay the fee..before exams...
+stationery request
+activity request
+project/lab request
+Immediate Workflow Actions
+Action	Type	Description
+Edit | Remove	Task	Joining Formalities
+Edit | Remove	Email Alert	CMSTUWelcometoCMSTU
+Edit | Remove	Email Alert	CMSTUWelcometoProf
+Edit | Remove	Field Update	CMSTUSetFieldValueImmediate
+Edit | Remove	Outbound Message	InformCUSystem
+=========================================================================
+				08/09/2018
+A very warm welcome to you all.. Hope you can hear me and see my screen..
+=========================================================================
+which action fires 1st???field update
+is there a sequence???yes
+will the sequence be always consistent??yes
+1.task
+2.email alert a,b
+3.field update
+4.o/b message
+1,2a,2b,3,4
+3,1,2a,2b,4??correct sequence
+order of execution
+WF defined on student master--is it possible to access the child records??
+when i define a WF on student marks--is it possible to access the parent records???is it possible to access the sibling records???
+--PLS. REVISE OWD,RECORD SHARING,PROFILE,PERM SETS--ALL SECURITY CONCEPTS IN MODULE 4,5
+--------------------------------PARALLEL APPROVALS------------------------------
+Separation-clearance gets approved in parallel by many people..UNANIMOUS APPROVAL...
+1.ENTRY CRITERIA
+2.APPROVERS
+3.WHAT ACTION TO TAKE WHEN A REQUEST IS APPROVED OR REJECTED.
+4.CAN I RECALL & RESUBMIT
+EACH& EVERY APPROVER---SHD HAVE ACCESS TO THE RECORD THAT IS BEING SUBMITTED FOR APPROVAL...ATLEAST READ ACCESS..
+--PLS. REVISE OWD,RECORD SHARING,PROFILE,PERM SETS--ALL SECURITY CONCEPTS IN MODULE 4,5
+=========================================================================
+				09/09/2018
+A very warm welcome to you all.. Hope you can hear me and see my screen..
+=========================================================================	
+---------------------------------SALES CLOUD---------------------------
+CRM-SALES,SERVICE,MKTG.
+LEAD,CAMPAIGN(how do i capture leads??)what are the automation options i hv as SFDC user or admin...
+OPPTY,ACCOUNTS
+PRODUCTS,PRICE BOOKS..
+Lead-can go thru a set of stages..Lead mgmt. process--NEW LEAD,LEAD CONTACTED,LEAD CONVERTED,LEAD DROPPED..-PRODUCT LINES
+For eg.,you are selling laptops & smartphones...--corporate orders or retail...B2B & B2C...
+Business account-corporate--set of contacts..& their roles..influencer,decision maker...
+Person account---individual
+Account-Oppty--can also go thru a set of stages--Oppty. mgmt process
+CPQ--Appexchange--there are many vendors..APPTUS,STEELBRICK ...PART OF THE SALESCLOUD...
+PRICE & QUOTATIONS
+SALES PROCESS-IT IS NOTHING BUT THE DIFFERENT STAGES IN AN OPPTY.RECORD UNDERGOES OR GOES THRU DURING ITS LIFECYCLE..THESE ARE PICKLIST VALUES CONTROLLED BY THE STAGE PICKLIST STD. FIELD.
+------------------------------------------------------------------------
+Lead automation or Lead capture...
+1.web2lead--generate a lead automatically in SFDC from the co. website..
+2.auto-response--when register on the website..you will get an email,confirming thanks for contacting us etc etc...
+Let us assume that we are generating leads for 2 product categories..laptops & smartphones
+File name shd be web2lead.html..u shd not hv .txt at the end of the file
+web2lead form can be published on ur co website so that users who are visiting the site can fill this web2lead form...
+Auto-response rule..this uses an email template which can be customised further..
+From our co. website,we will generate leads for 2 product categories
+1.laptops-lead can be assigned to a laptop queue
+2.smartphones-can be assigned to a smartphone queue
+Lead assignment rules--assign to a queue or a user.
+---Queues
+Leads
+Cases
+Orders
+Contracts
+Custom Objects
+Auto-response/Assignment rules can be defined for
+Leads & 
+Cases
+Leads & cases can be assigned to a
+SFDC users
+Queue using the assignment rules
+email services..you can write custom apex code...
+web2student--custom apex code
+email2student--custom apex code
+SALESCLOUD--WEB2LEAD--OOB FEATURE
+-----------------------------------SERVICE CLOUD------------------------------------------
+Case,solutions etc..knowledge base
+case automation options
+salesforce knowledge & community---basic intro
+similar to the Sales Process in Oppty(sales cloud),u hv Support Process in service cloud.
+record type-page layouts -profiles  & picklist values...-student master--showed 2 record type..1 for CSE,IT & Non CSE,IT
+How do we customize the business process according to the product???
+Laptop-Oppty.-u may hv 5 stages--u control the sales process
+Smartphone-Case-u may hv 10 stages--you control the support process
+what is available OOB?
+web2case
+email2case..
+CASE & LEAD
+AUTORESPONSE--
+WEB2LEAD/CASE
+EMAIL2CASE/DO NOT HV EMAIL2LEAD
+ASSIGNMENT RULES
+
+CASE TEAMS//OPPTY & ACCOUNT HAVE A TEAM CONCEPT.
+ESCALATIONRULES--CASE ONLY---
+---ORDER OF EXECUTION IN SFDC
+VALIDATION RULE
+ASSIGNMENT RULE
+AUTO-RESPONSE RULE
+WF RULE(WITH IMMEDIATE ACTIONS)
+ESCALATION RULES--CASES ONLY
+----email2case
+YOU CAN SETUP AN AUTOFWD IN SUCH A WAY THAT ALL MAILS SENT TO SUPPORT@EDUREKA.CO WILL BE FWD TO
+samirwhig@c0e5rubyimlkib7ibrn7sam6cfzxyb8fzfpm3szwdrr1xn3cr.28-17j3yeae.ap2.case.salesforce.com
+-------------------------------------Data Handling-----------------------------------------------------
+Imp of external ids---record id
+what is external ids???
+when importing custom objects,or person acs,u can use external ids to prevent duplicate records from being created as a result of the import ops.
+export & backup
+import(insert,update,upsert,delete)
+mass ops...
+tools available for performing data ops
+limits & situations when a particular tool shd be used
+---Monthly export---1 export data from all objects in 1 go...or select a subset of objects & export the records
+Data loader install it on windows/mac os...
+----Data Import Wizard
+Coverage>>>ac,contacts,leads,soln.s & custom objects
+Fn.>>only data import possible.prevents data duplication based on ac,name,contact email,lead email etc.
+Vol.>>upto 50000 records
+----Data Loader
+Coverage>>all objects  except users
+Fn.>>both import & export.supports auto data loads
+Vol.>>upto 5Mn. records.1 object at a time.
+
+https://ap7.salesforce.com/a0e0I00000lgn7Q
+https://ap7.salesforce.com/a0e0I00000lhAqL
+https://ap7.salesforce.com/a0e0I00000lhArE---Record Id--------
+=========================================================================
+				15/09/2018
+A very warm welcome to you all.. Hope you can hear me and see my screen..
+=========================================================================
+I am trying to create a new student master record from excel sheet..say i want to create 10 new students...
+do i hv to supply the record ids??
+SOFT DELETE...NOT HARD DELETE(PERMANENT DELETE)
+1.Exported data into a CSV file from student master & student marks objects.
+2.we used the same export file & used it as a template for import(insert) to insert new records into the DB.
+3.we also inserted new records into the marks object which is a related object to the masterobject.
+4.we cleaned up the export file to serve as a template for insert.we removed all columns that would be automatically generated by the system at the time of creating a new record
+like record id,created date,owner etc.then a few formula fields & rollup summary fields...& even fields that would be update by the wf field update action.
+Picklist values work only at the UI layer...but when u supply values that are not present in the picklist from dataloader they are allowed..
+Validation rule--it will work fine..it will prevent if u supply wrong values or junk values
+ZIP code--validation or some email id is incorrect format--system will not allow
+---For performing an update to an existing record in SFDC u hv 2 options...
+1.u can provide the record id
+2.u can provide the external id field
+UPSERT---UPDATE+INSERT
+If record in the csv file already exists in the SFDC DB..system will try to perform an update ops..
+if record does not exist in the SFDC DB,system will try to perform an insert
+If u are loading 1000 record..u will get 1000 mails..so u may not want this to happen..
+You can turn off triggers,wf rules or specifically remove the email alerts...look if u need autoresponse rules to fire..turn off
+It becomes imp. to understand the order of execution that we covered in module 7 business process automation...
+---when u extract records from the student mark object which is a related object to student master..
+u hv a relationship field which links the student mark & student master
+CMSTUMARKS2STUDENT__C
+a0e0I00000lhZMmQAM
+a0e0I00000lhAqLQAU
+a0e0I00000lgn7QQAQ
+a0e0I00000lgn7QQAQ
+a0e0I00000lhArEQAU
+a0e0I00000lhArEQAU
+a0e0I00000lhAqLQAU
+a0e0I00000lgn7QQAQ
+a0e0I00000lhAqLQAU
+what is the relationship betwn. student master & marks???is it one to one or one to many or many to many???
+one student can hv many marks...
+5.Record Id & external id
+if u hv to insert a new record in a master-detail relationship into a child object or the detail object...here marks is the child object
+u need to get the record id of the parent record & then establish the relationship betwn. the parent & the child..
+1.data loader
+2.workbench
+https://workbench.developerforce.com/login.php
+3.import wizard
+4.informatica--3rd party..
+It has to go thru a ISV review process..independent sw vendor...
+=========================================================================
+				16/09/2018
+A very warm welcome to you all.. Hope you can hear me and see my screen..
+=========================================================================
+----------------------------------------Reports & Dashboards-------------------------------------
+1.Summary report format provides a tabular listing of data with dorting & sub-totalling of said data.May be used to support dashboard components.
+2.Tabular report provides a simple listing of your data w/o sub-totals.
+3.Matrix report summarizes data in a grid against horizontal & vertical criteria.It provides totals for both rows & cloumns.It may also be used to support dashboard components.
+4.Joined report can contain data from multiple std. & custom report types.u can add report types to a joined report if theyve a relationships with the same object or objects.
+For eg.,if youve a joined report that contains the oppty report type,u can add the cases report type as well coz both hv a relationship with the ac object.a joined report consists of upto 
+5 report blocks which u can add to the report to create multiple views of your data.
+we customised an existing report,changed the type to summary,tabular etc... & saved in the public folder
+How to create a new report?
+Records displayed in the report will be based on the overall security settings like OWD,CBS,Role/role hierarchy etc..
+when you click on the tab--student master we are seeing all the student master records..
+but look at your report..
+Security of report folders are similar to what we do in windows folders...you are providing access to see the contents in the folder..
+you can add users,groups,roles..but role hierarchy does not work here..
+For eg.,if u add a role SUStudent..it does not eman that SUProf. & SUHOD will automatically get access to this folder...
+Dasboards(20 components)
+1.summary
+2.matrix report types is used to create dashboards
+not for tabular reports
+4 types of dashboards
+1.table-top5,bottom5 lists
+2.charts-eg. bar charts,line charts,pie charts etc.
+3.gauge-to show progress towards a goal
+4.metric-single no.
+If dashboard is saved as run as specified user--say admin user--even though prof. or student logsin,he iwll be running the dashboard as admin
+A running user overrides the sharing model & will allow the users who see the dashboards to see high level sales data for everyone,not just their own.a running user determines
+the level of access to the dashboard data.
+profile level & permission set security settings for reports & dashboards
+---Historical trending reports-Enable users to report on changes to records in this object over time.
+reporting snapshots..Reporting snapshots allow users to run reports and save the report results as records on custom objects. Unlike reports, users can schedule reporting snapshots to summarize data at specific times, 
+and work with the summarized data similarly to how they work with other records in Salesforce.
+----------APPEXCHANGE-------------
+You want the ability to automate creation of objects & fields in the SFDC org using an excel sheet..
+check if this is available in appexchange & try to use it...FREE/PAID...
+its upto ur choice..u hv a development team with u that can build the tool for u within 2 months..
+--ACTIVITIES-NEED TO ENABLE THIS ON THE OBJECT DEFINITION..
+EVENTS & TASKS-SPL. TYPE OF RELATIONSHIP FIELD--POLYMORPHIC RELATIONSHIP
+..SAME OBJECT CAN BE RELATED TO MANY OBJECTS,BUT ONLY ONE AT A TIME..
+STUDENT MARKS--STUDENT MASTER--'RELATIONSHIP FIELD'TO REPRESENT THIS RELATIONSHIP
+STUDENT MARKS-ACCOUNT--RELATIONSHIP FIELD--
+--------------------FOLDERS,TEMPLATES----------------------
+Reports & dashboard folders
+Email template folders
+Documents tab
+static resources
+Files-Chatter
+-------------------------Chatter----------------------------
+chatter feed tracking--this will show changes to a particular field where chatter feed tracking is enabled on the chatter feed only..
+Field history tracking--this stores the previous values of the field..MECH to CIVIL...CIVIL TO CSE,CSE TO IT...
+audit trail--audit trail of what you hv done in your org mostly at METADATA & other activities like login,logout as another user--security...
+=========================================================================
+				22/09/2018
+A very warm welcome to you all.. Hope you can hear me and see my screen..
+=========================================================================
+------------------SF1 & LIGHTNING-------------------
+In 2013 they launched salesforce mobile f/w...they also launched salesforce 1 APIs-force.com,heroku,excattarget(fuel)
+Mobile UI is run on aura f/w..the same thing has been extended to the browser as well..LIGHTNING..
+2015-This is a new UI f/w on the browser..
+Response UI-RWD-Responsive web design--if u open ina tab,the page fits to the viewing area(VIEWPORT) of the tab--form factor
+in smartphone...fits...,browser on desktop--fits to that 
+CLASSIC UI..
+LIGHTNING UI...
+both are available u can switch..
+-------------------Application Development Lifecycle-----------------------------
+1.Requirement Gathering
+2.Requirement GAP Analysis
+3.Feasibility check & estimate
+4.Planning & Design
+5.Project Building
+6.Test(4-5-4-5-...)
+7.UAT
+8.Go Live!!
+-----------------Different Dev Environments------------------
+1.Sandbox is nothing but a replica of production(live)environment!!!it is used for building any project in SF instaed of directly working on live environemnt,to avoid any possible risk.
+2.Production(Live)
+--------------Best Practices for Project cycle & Deployment---------------
+SB>>>min.01
+Production>>>always 01
+a.SB>>>Dev/Testing/UAT>>>Production
+b.SB>>>Dev>>>SB>>>Testing/UAT>>>Production
+c.SB>>>Dev>>>SB>>>Testing>>>SB>>>UAT>>Production
+d.SB>>India>>>SB>>>US>>>SB>>>UK>>ISB>>>Dev>>>SB>>>Testing>>>SB>>>Staging>>>>Production
+-------------------Deployment-Migration of apps & components---------------------
+Available Sandboxes
+1.Developer
+2.Developer Pro
+3.Partial Copy
+4.Full copy
+-----------Project Deployment Process------------
+1.Purchase SFs paid edition
+--after making payment,we get production access & we cannot let developer/admin to work on production directly.hence we create SB.
+2.Login to production,create SB.
+3.Login to SB to start building your project work.
+If your Production login details are
+URL:login.salesforce.com
+UN:abc@gmail.com
+PW:123
+then,to login into SB(name:demosb2) we need to use
+URL:test.salesforce.com
+UN:abc@gmail.com.demosb2
+PW:123
+4.build the project by creating things like apps,object etc.
+5.prepare a connection betwn. sanding & recieving by 'Deployment Settings'.Its like handshaking activity.
+select the needed checkbox at SB.
+do the same from production & connection will be set betwn. them
+6.prepare a suitcase/change set,i.e.,o/b change set from SB.this will add project & content from SB to Production.
+7.add all elements in suitcase
+8.upload the change set.
+9.go to production
+10.u will see the entry of this,in production under 'i/b change sets'
+11.see the components if u want to check what all elements coming from SB in that.
+12.verify by using validate button(imp)
+13.perform deployment by 'Deploy' button
+14.Done!!!!
+=========================================================================
+				23/09/2018
+A very warm welcome to you all.. Hope you can hear me and see my screen..
+=========================================================================
+---------------------------Introduction to Apex-----------------------------------
+1.Apex syntax is similar to java.
+2.Apex has classes,inheritance,polymorphism & other aspects of OOPs.
+3.Apex is strongly typed,compiled,highly scalable,secure & runs natively on the SFDC platform.
+4.apex directly saves & runs on the SFDC platform.
+5.apex is a template based language.
+6.it is governed language as it executes in a multitenant environment.
+we were trying to validate if a student has passed in a subject,then ensure the system does not allow duplicate values
+i want to summarise the list of all marks in a sem & send out a report--
+rollup summary field--which will show a list of subjects failed,passed,total marks etc.
+From the UI-You want to edit multiple records
+web2student-create student records from another website..
+email2student
+apex is a strongly typed....we hv seen data types...u need to mention the data types of the variable...
+validation rule,rollup summary,wf rules,formula fields,all other rules will be fired when a record is inserted or updated from the UI,from data loader or data import wizard,from a apex class.
+PERFORMING A DML OPERATION
+to perform an insert just 2 lines of code
+1.declare a sobject variable of the type of record/object that you are going to insert.
+2.populate the values into the fields in the object.
+3.insert statement.
+
+what is required to perform an update..
+1.declare a sobject variable of the type of record/object that you are going to update.
+2.does the sobject variable contain the record i need to update for eg.--apex1@apex.com-SOQL
+3.update statement
+
+//a is a sobject of type Account...is a std object....
+//This is my first line of Apex code
+Account a = new account(Name='creating a new account on 23092018');
+insert a;//Insert is a DML operation
+
+ 
+SUStudentMaster__c stud = new SUStudentMaster__c(SUStudentMailid__c='samirwhig23092018@gmail.com',SUStudentStatus__c='ACTIVE');  
+insert stud;//Insert is a DML operation
+
+SUStudentMaster__c stud = [SELECT Id,Name FROM SUStudentMaster__c WHERE SUStudentMailid__c='samirwhig230972018@gmail.com'];
+stud.SUStudentStatus__c='SUSPENDED';
+stud.SUStudentDeptt__c='TEXTILE';
+update stud;//Update is a DML operation
+
+SQL-STRUCTURED QUERY LANGUAGE-ORACLE,SYBASE,SQL SERVER ETC.
+SOQL-SALESFORCE OBJECT QUERY LANGUAGE
+DEVELOPER CONSOLE
+HOW TO SEE THE DEBUG LOG
+EXECUTE ANONYMOUS BLOCK..
+---Controlling Statements
+1.if
+if(condition){
+//this code runs when condition is true
+}
+integer age;
+//assume you got age value from user
+    age=17;
+    if(age>=18){
+//this code runs when condition is true
+    system.debug('Congrats!You are eligible to vote!!');
+            }
+    if(age<18){
+//this code runs when condition is true
+        system.debug('Sorry!You are not eligible to vote!!');
+    }
+2.if-else
+   
+    integer age;
+    //assume you got age value from user
+    age=54;
+    if(age>=18){
+        //this code runs when condition is true
+        system.debug('Congrats!You are eligible to vote!!');
+            }
+    else{
+        //this code runs when condition is true
+        system.debug('Sorry!You are not eligible to vote!!');
+    }
+3.if-elseif
+//if-elseif
+string country;
+if(country="India"){
+//code
+}
+elseif(country="US"){
+//code
+}
+elseif(country="UK"){
+//code
+}
+elseif(country="Japan"){
+//code
+}
+-----Looping statements
+1.do while
+//---------------do while looping statements---------------------
+    string country;
+    country='India';
+    do{
+        system.debug('I love my country');
+    }while(country=='USA');
+2.while
+//--------------While looping statements------------------------------
+    string country;
+    country='India';
+    while(country=='India'){
+        system.debug('I love my country');
+    }
+3.for loop
+//-----------------for(Counter;Condition;Increment/Decrement) loop-------------------------
+    for(integer i=1;i<21;i+1){
+        system.debug('I love my country');
+    }
+--------------------public class ApexClassForVoting {
+//variable declaration in apex
+    integer age;
+//method in apex
+    public void MyFunction(){
+    //assume you got age value from user
+    age=20;
+    if(age>=18){
+        //this code runs when condition is true
+        system.debug('Congrats!You are eligible to vote!!');
+            }
+    else{
+        //this code runs when condition is not true
+        system.debug('Sorry!You are not eligible to vote!!');
+    }
+}
+}
+-------------------------Apex triggers-------------------------------
+when a DML is performed...INSERT or UPDATE...WF rule is fored to check few validations..or perform  some field update...send an email alert etc.
+If age is <17yrs....based on DOB...u cannot allow the student record to be created---validation rule.
+Lets say u hv to verify the DOB of the student by calling say the AADHAR CARD DB...WHICH IS EXTERNAL..or SSN...EXTERNAL SYSTEM...where u want to verify...
+u may hv 2 options...1 is to verify immediately real-time & prevent the record from being created
+or u can insert the record...make a call to the SSN or AADHAR CARD DB..comes back after a 1 day..invalidate the student status...
+you want to perform a unique record check..for eg.,emailid+phone+fathers name+student name+passport no...u can go for paex trigger..which will validate the record before inserting
+For eg,mrks..update the master record with total marks,no. of subjects passed,failed etc..use a trigger AFTER INSERT event to update the master record--its a lookup relationship
+& rollup summary cannot be used..
+BUSINESS LOGIC=APEX
+WHEN TO RUN BUSINESS LOGIC=TRIGGER
+APEX CLASS=DISCOUNT
+EVENTS & TYPES OF TRIGGER
+A.BEFORE
+AFTER
+B.DML OPS.
+INSERT
+UPDTE
+DELETE
+UNDELETE
+Trigger best parctices
+1.always hv 1 trigger per 1 object.
+2.never write business logic in trigger
+3.always try to hv 1 class for 1 trigger(1:1mapping)such a class is called as trigger handler.
+trigger PenDiscountTrigger on Pen__c (before insert) {
+PenClassDemonstration.applyDiscount(Trigger.new); 
+}
+
+public class PenClassDemonstration{    
+    public static void applyDiscount(list<Pen__c> PensListNew) {        
+      for (Pen__c p :PensListNew){
+        if(p.Price__c >= 100){
+            p.Price__c = p.Price__c-20 ;
+   
+            }
+      }
+    }
+}
+WF Rule works on only 1 record..at a timne...
+200 record update/inserted--trigger will get all the 200 records & it will process all records 1 by 1---by default all triggers are bulkified..they can handle bulk records
+500 records???--batches--200 1st execution...200 2nd execution & 100 3rd execution
+-----------------------DB Queries in SF--------------------
+In SF,wehv 2 query languages
+SOQL-QUERY FORMAT
+SOSL
+[SELECT Name,Max_salary__c FROM Position__c WHERE Status__c='open']
+2 types of SOQL queries
+1.[]expressions are enclosed in a [] brackets
+2.string based queries are written in string form & are passed as a parameter to DB query method to be executed.
+SOQL queries can return the following 3 types of data
+1.list of sobjects
+2.single sobject
+3.integer
+
+SOQL fn.s are also called 'aggregate fn.s' as they show a calculated result from a query
+SUM()
+MIN()
+MAX()
+COUNT() & COUNT(FILE NAME)
+AVG()
+Major keywords used in SOQL queries
+IN
+AND/OR
+ORDER BY
+LIMIT
+LIKE
+NOT 
+GROUP BY
+FOR UPDATE
+SELECT name FROM Pen__c WHERE name='Praveen'
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
